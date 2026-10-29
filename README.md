@@ -39,3 +39,4 @@ VS Code + PlatformIO（board: `esp32-s3-devkitc-1`，flash 16MB，`memory_type =
 ## 路线
 
 点灯 → 串口 → I2C → OLED → 期末做出「桌面环境检测仪」→ 暑假 FreeRTOS + 物联网数据采集终端
+| Day 4 | 2026-10-29 | BOOT 按键控制彩灯：短按换色、长按关灯 | 串口打印 short/long press，颜色跟着变 |
