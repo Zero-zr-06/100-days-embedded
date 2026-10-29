@@ -32,7 +32,7 @@ VS Code + PlatformIO（board: `esp32-s3-devkitc-1`，flash 16MB，`memory_type =
 
 - [x] 环境搭好，点亮第一个 LED
 - [x] 串口打印
-- [ ] 按键控制
+- [X] 按键控制
 - [ ] I2C 读温湿度传感器
 - [ ] OLED 屏显示数据
 - [ ] WiFi 连上，数据发到手机
