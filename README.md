@@ -24,6 +24,7 @@ VS Code + PlatformIO（board: `esp32-s3-devkitc-1`，flash 16MB，`memory_type =
 | Day 2 | 2026-10-27 | 首次烧录成功，串口打印跑通 | `boot:0x8`，烧录成功 + tick 刷屏 |
 | Day 3 | 2026-10-28 | WS2812 RGB 呼吸灯点亮（`neopixelWrite` GPIO48） | 彩灯变色呼吸 |
 | Day 4 | 2026-10-29 | BOOT 按键控制彩灯：短按换色、长按关灯 | 串口打印 short/long press，颜色跟着变 |
+| Day 5 | 2026-10-30 | 呼吸灯 + 按键共存（`millis()` 非阻塞替代 `delay()`） | 呼吸自动换色，短按切色、长按暂停 |
 
 > 目录里的 `01-GPIO点灯/` 是 Day 1 最早搭的骨架，代码没改动，留着当备份；真正烧过的版本在 `day01-blink-serial/`。
 > 每个 dayXX 目录里都有单独的 README，写当天做了什么、怎么复现。
