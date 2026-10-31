@@ -1,5 +1,6 @@
 .pio/
 .vscode/
+**/wifi_secrets.h
 .DS_Store
 *.bin
 *.elf

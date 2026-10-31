@@ -25,6 +25,7 @@ VS Code + PlatformIO（board: `esp32-s3-devkitc-1`，flash 16MB，`memory_type =
 | Day 3 | 2026-10-28 | WS2812 RGB 呼吸灯点亮（`neopixelWrite` GPIO48） | 彩灯变色呼吸 |
 | Day 4 | 2026-10-29 | BOOT 按键控制彩灯：短按换色、长按关灯 | 串口打印 short/long press，颜色跟着变 |
 | Day 5 | 2026-10-30 | 呼吸灯 + 按键共存（`millis()` 非阻塞替代 `delay()`） | 呼吸自动换色，短按切色、长按暂停 |
+| Day 6 | 2026-10-31 | 连 WiFi + 内建网页服务器，手机/电脑控制彩灯 | 浏览器打开 http://10.2.139.130，点按钮灯立刻变 |
 
 > 目录里的 `01-GPIO点灯/` 是 Day 1 最早搭的骨架，代码没改动，留着当备份；真正烧过的版本在 `day01-blink-serial/`。
 > 每个 dayXX 目录里都有单独的 README，写当天做了什么、怎么复现。
@@ -36,7 +37,7 @@ VS Code + PlatformIO（board: `esp32-s3-devkitc-1`，flash 16MB，`memory_type =
 - [x] 按键控制
 - [ ] I2C 读温湿度传感器
 - [ ] OLED 屏显示数据
-- [ ] WiFi 连上，数据发到手机
+- [x] WiFi 连上，数据发到手机
 
 ## 路线
 
