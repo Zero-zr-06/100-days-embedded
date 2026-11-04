@@ -4,6 +4,7 @@
 #include <ESPmDNS.h>
 #include <Esp.h>
 #include "wifi_secrets.h"
+#include <Preferences.h>
 
 #define RGB_PIN 48
 
@@ -33,8 +34,10 @@ unsigned long lastSample = 0;
 const unsigned long SAMPLE_MS = 2000;
 
 // ---- Day 9 新增：阈值 + 滞回 + 状态 ----
-float threshold = 38.0;     // 告警阈值，网页可改
-bool  alert     = false;    // 当前是否告警
+float threshold = 38.0;     // 首次开机默认（实测基线+2，见 day09 踩坑）
+bool  alert     = false;
+const float HYST = 1.0;
+Preferences prefs;          // NVS：往 Flash 里存参数，掉电不丢
 const float HYST = 1.0;     // 滞回：低于 阈值-1 才解除，防止临界点反复跳
 
 void applyLevel() {
@@ -124,7 +127,11 @@ void sendHome() {
 void setup() {
   Serial.begin(115200);
   delay(500);
-  Serial.println("\nDay 9: threshold alert + auto reconnect");
+  Serial.println("\nDay 10: threshold alert + auto reconnect");
+  prefs.begin("cfg", false);               // 打开叫 "cfg" 的存储区
+  threshold = prefs.getFloat("th", 38.0);  // 有存过就读，没存过用 38.0
+  Serial.printf("threshold restored: %.1f C\n", threshold);
+
 
   WiFi.mode(WIFI_STA);
   WiFi.begin(WIFI_SSID, WIFI_PASS);
@@ -142,7 +149,6 @@ void setup() {
   } else {
     Serial.println("WiFi FAILED - will keep retrying in loop");
   }
-
   server.on("/",      []() { server.send(200, "text/html; charset=utf-8", page()); });
   server.on("/api",   handleApi);
   server.on("/set",   []() {                 // 网页下发新阈值
@@ -150,6 +156,7 @@ void setup() {
       float v = server.arg("th").toFloat();
       if (v > 20.0 && v < 80.0) {
         threshold = v;
+        prefs.putFloat("th", threshold);         // 立刻写进 Flash
         Serial.printf("threshold -> %.1f C\n", threshold);
       }
     }
