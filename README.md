@@ -29,6 +29,9 @@ VS Code + PlatformIO（board: `esp32-s3-devkitc-1`，flash 16MB，`memory_type =
 | Day 7 | 2026-11-01 | 网页实时数据面板（/api JSON + 自动刷新 + mDNS） | 手机打开网页，Uptime 每 2 秒自己跳 |
 | Day 8 | 2026-11-02 | 网页温度曲线图（环形数组存历史 + Canvas 画图） | 曲线每 2 秒滚一格，手捂芯片曲线上翘 |
 | Day 9 | 2026-11-03 | 阈值告警 + 网页可调阈值 + WiFi 掉线自动重连 | 手捂芯片灯红闪、网页 ALERT，松手自动恢复 |
+| Day 10 | 2026-11-04 | 阈值掉电保存（NVS/Preferences 库） | 网页设 40，按 RST 重启后仍是 40 |
+| Day 11 | 2026-11-05 | 串口命令行（th/show/reboot，非阻塞读串口） | 串口敲 th 36 回车，回显 saved；reboot 后值还在 |
+
 
 > 目录里的 `01-GPIO点灯/` 是 Day 1 最早搭的骨架，代码没改动，留着当备份；真正烧过的版本在 `day01-blink-serial/`。
 > 每个 dayXX 目录里都有单独的 README，写当天做了什么、怎么复现。
