@@ -171,7 +171,7 @@ void sendHome() {
 void setup() {
   Serial.begin(115200);
   delay(500);
-  Serial.println("\nDay 12: threshold alert + auto reconnect");
+  Serial.println("\nDay 12:  wifi config via serial");
   prefs.begin("cfg", false);               // 打开叫 "cfg" 的存储区
   threshold = prefs.getFloat("th", 38.0);  // 有存过就读，没存过用 38.0
   Serial.printf("threshold restored: %.1f C\n", threshold);
