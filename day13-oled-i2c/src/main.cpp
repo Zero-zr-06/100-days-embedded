@@ -11,12 +11,18 @@ Adafruit_SSD1306 oled(128, 64, &Wire, -1);
 void setup() {
   Serial.begin(115200);
   delay(500);
-  Serial.println("\nDay 13: OLED");
+  Serial.println("\nDay 13: OLED (SSD1306)");
   Wire.begin(I2C_SDA, I2C_SCL);
   if (!oled.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {   // 扫到 0x3D 就改成 0x3D
     Serial.println("SSD1306 init failed");
     for (;;) delay(1000);
   }
+  oled.clearDisplay();
+  oled.setTextSize(1);
+  oled.setTextColor(SSD1306_WHITE);
+  oled.setCursor(0, 0);
+  oled.println("ESP32-S3 OK");
+  oled.display();
   Serial.println("OLED ready");
 }
 
