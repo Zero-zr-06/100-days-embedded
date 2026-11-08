@@ -33,6 +33,7 @@ VS Code + PlatformIO（board: `esp32-s3-devkitc-1`，flash 16MB，`memory_type =
 | Day 11 | 2026-11-05 | 串口命令行（th/show/reboot，非阻塞读串口） | 串口敲 th 36 回车，回显 saved；reboot 后值还在 |
 | Day 12 | 2026-11-06 | 串口配网：wifi 命令改 SSID/密码存 NVS | 敲 wifi 热点名 密码 + reboot，连上新热点不用重烧 |
 | Day 13 | 2026-11-07 | 接上 0.96" OLED（I2C 扫描 + SSD1306 显示） | 串口打 OLED ready，屏幕显示文字、运行秒数和温度 |
+| Day 14 | 2026-11-08 | OLED 与网页合体，一个固件多任务共存 | 屏幕实时显示温度/IP，网页同时可用 |
 
 
 > 目录里的 `01-GPIO点灯/` 是 Day 1 最早搭的骨架，代码没改动，留着当备份；真正烧过的版本在 `day01-blink-serial/`。
