@@ -36,6 +36,7 @@ VS Code + PlatformIO（board: `esp32-s3-devkitc-1`，flash 16MB，`memory_type =
 | Day 14 | 2026-11-08 | OLED 与网页合体，一个固件多任务共存 | 屏幕实时显示温度/IP，网页同时可用 |
 | Day 15 | 2026-11-09 | OLED 温度曲线（drawLine + 自动缩放） | 屏幕下半折线随捂芯片上爬，网页同步 |
 | Day 16 | 2026-11-10 | 接入 ArduinoOTA，修复 OTA 初始化顺序导致的崩溃循环 | 串口不再反复 Backtrace；WiFi 未连上，无线上传待 11-11 补验 |
+| Day 17 | 2026-11-11 | BOOT 按键切换 OLED 三页（温度/曲线/系统） | 按一下换一屏，页码跟着变，不依赖 WiFi |
 
 
 > 目录里的 `01-GPIO点灯/` 是 Day 1 最早搭的骨架，代码没改动，留着当备份；真正烧过的版本在 `day01-blink-serial/`。
