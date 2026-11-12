@@ -304,15 +304,17 @@ void setup() {
 void loop() {
     // ---- Day 11：读串口命令（非阻塞）----
     // ---- Day 17：BOOT 按键切页 ----
-  static bool lastBtn = HIGH;
-  static unsigned long lastBtnMs = 0;
-  bool btn = digitalRead(0);
-  if (lastBtn == HIGH && btn == LOW && millis() - lastBtnMs > 200) {
-    lastBtnMs = millis();
-    oledPage = (oledPage + 1) % 3;
-    Serial.printf("OLED page -> %d\n", oledPage + 1);
-  }
-  lastBtn = btn;
+ static bool lastBtn = HIGH;          // 上次循环：按键是松开的
+static unsigned long lastBtnMs = 0;  // 上次翻页是第几毫秒发生的
+bool btn = digitalRead(0);           // 这次循环：按键现在是什么状态
+
+// 上次松开 && 这次按下 && 距离上次翻页超过 200ms  →  才算「刚按下去」
+if (lastBtn == HIGH && btn == LOW && millis() - lastBtnMs > 200) {
+  lastBtnMs = millis();              // 记下这次翻页的时间
+  oledPage = (oledPage + 1) % 3;     // 0→1→2→0，取余，C 课学过
+  Serial.printf("OLED page -> %d\n", oledPage + 1);
+}
+lastBtn = btn;                       // 把「这次」存起来，下轮它就成了「上次」
   while (Serial.available()) {
     char c = Serial.read();
     if (c == '\n')      { handleCmd(cmdBuf); cmdBuf = ""; }
