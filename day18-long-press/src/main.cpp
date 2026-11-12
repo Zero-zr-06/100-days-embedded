@@ -323,14 +323,10 @@ void loop() {
   // TODO: fill in these 5 lines
   // hint: compare millis() - pressMs with 1000
   //       set oledPage to 0, print "long press -> home", then clear pressMs
-  if(millis() - pressMs >= 1000 && pressMs !=0){   
+  if(millis() - pressMs >= 1000 && pressMs !=0){   //读秒不为0且超过1秒
    oledPage=0;
-   Serial.println("long press -> home");
-   pressMs=0;}
-  //
-  //
-  //
-  //
+   Serial.println("long press -> home");//串口打一行以示长按回到首页
+   pressMs=0;}//
 
   lastBtn = btn;
                   // 把「这次」存起来，下轮它就成了「上次」
