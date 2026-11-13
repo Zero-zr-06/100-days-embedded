@@ -38,6 +38,7 @@ VS Code + PlatformIO（board: `esp32-s3-devkitc-1`，flash 16MB，`memory_type =
 | Day 16 | 2026-11-10 | 接入 ArduinoOTA，修复 OTA 初始化顺序导致的崩溃循环 | 串口不再反复 Backtrace；WiFi 未连上，无线上传待 11-11 补验 |
 | Day 17 | 2026-11-11 | BOOT 按键切换 OLED 三页（温度/曲线/系统） | 按一下换一屏，页码跟着变，不依赖 WiFi |
 | Day 18 | 2026-11-12 | BOOT 长按回首页（millis 计时，自己写 5 行） | 按住 1 秒屏幕跳回 1/3，串口只打印一次 |
+| Day 19 | 2026-11-13 | BOOT 按键计数，跨函数共享全局变量 | 3/3 页显示 press N，长按归零 |
 
 
 > 目录里的 `01-GPIO点灯/` 是 Day 1 最早搭的骨架，代码没改动，留着当备份；真正烧过的版本在 `day01-blink-serial/`。
