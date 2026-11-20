@@ -45,6 +45,7 @@ VS Code + PlatformIO（board: `esp32-s3-devkitc-1`，flash 16MB，`memory_type =
 | Day 23 | 2026-11-17 | 串口设的值存进 NVS  idle 5000 | 按 RST 重启 → 开机打 idle restored: 1000 ms |
 | Day 24 | 2026-11-18 | 设置总开关 | 输入idle off 不会自己回到首页 |
 | Day 25 | 2026-11-19 | （把空闲设置显示到屏幕） | （敲 idle 1000 屏幕那行立刻变 1000、idle off 开关变 OFF） |
+| Day 26 | 2026-11-20 | （把空闲时间画成进度条） | 按 RST 条从空涨满、idle 1000 后 1 秒涨满 |
 
 > 目录里的 `01-GPIO点灯/` 是 Day 1 最早搭的骨架，代码没改动，留着当备份；真正烧过的版本在 `day01-blink-serial/`。
 > 每个 dayXX 目录里都有单独的 README，写当天做了什么、怎么复现。

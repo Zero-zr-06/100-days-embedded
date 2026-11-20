@@ -59,7 +59,7 @@ $env:PLATFORMIO_SETTING_ENABLE_TELEMETRY="No"
 
 ## 学到什么
 
-<!-- 这里自己写一句：今天真正弄明白的一件事 -->
+oled.printf 和 Serial.printf 是同一套写法，只是换个地方输出
 
 ## 踩坑预告
 
